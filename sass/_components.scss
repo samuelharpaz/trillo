@@ -211,7 +211,7 @@
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 
   &__heading {
     font-size: 2.25rem;
@@ -304,5 +304,119 @@
   100% {
     transform: scale(1);
     box-shadow: none;
+  }
+}
+
+///////////////////////
+// PARAGRAPH
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+///////////////////////
+// LIST
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.7rem;
+
+      // background-image: url(../img/chevron-thin-right.svg);
+      background-color: var(--color-primary);
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+    }
+  }
+}
+
+///////////////////////
+// RECOMMEND
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__count {
+  }
+
+  &__friends {
+    display: flex;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    aspect-ratio: 1 /1;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+  }
+}
+
+///////////////////////
+// REVIEW
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+
+  &__text {
+    margin-bottom: 2rem;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+  }
+
+  &__user-box {
+    margin-right: auto;
+  }
+
+  &__user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__rating {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    font-weight: 300;
   }
 }
